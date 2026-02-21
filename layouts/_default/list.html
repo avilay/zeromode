@@ -1,0 +1,80 @@
+{{ define "main" }}
+  {{ $allPosts := where site.RegularPages "Type" "projects" }}
+  {{ $yearMonths := slice }}
+  {{ range $allPosts }}
+    {{ $yearMonth := printf "%s %s" (.Date.Format "2006") (.Date.Format "January") }}
+    {{ $yearMonths = $yearMonths | append $yearMonth }}
+  {{ end }}
+  {{ $uniqueYearMonths := $yearMonths | uniq | sort }}
+
+
+  <div class="list-container">
+    <header class="list-header">
+      <h1 class="list-title">
+        <span class="list-title-line2">PROJECTS</span>
+      </h1>
+      {{ if .Description }}
+        <p class="list-description">{{ .Description }}</p>
+      {{ end }}
+      {{ partial "list-count.html" . }}
+    </header>
+
+    <!-- Filter Controls -->
+    <div class="filter-accordion">
+      <button
+        class="filter-toggle-btn"
+        id="filter-toggle-btn"
+        aria-expanded="false"
+        aria-label="Toggle filters"
+        aria-controls="posts-filter-content">
+        <span class="filter-toggle-text">Filters</span>
+        <svg
+          class="filter-toggle-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="posts-filter" id="posts-filter-content">
+        <div class="filter-group">
+          <label for="filter-year-month" class="filter-label">Year & Month</label>
+          <select
+            id="filter-year-month"
+            class="filter-select"
+            aria-label="Filter by year and month">
+            <option value="">All Dates</option>
+            {{ range $uniqueYearMonths }}
+              <option value="{{ . }}">{{ . }}</option>
+            {{ end }}
+          </select>
+        </div>
+
+        <button id="clear-filters" class="filter-clear-btn" aria-label="Clear all filters">
+          Clear Filters
+        </button>
+      </div>
+    </div>
+
+    <div class="posts-list" id="posts-container">
+      {{ range .Paginator.Pages }}
+        {{ partial "post-card.html" (dict
+          "page" .
+          "limit" 3
+          "dataYearMonth" (printf "%s %s" (.Date.Format "2006") (.Date.Format "January")))
+        }}
+      {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ partial "pagination.html" . }}
+
+    <!-- Navigation links -->
+    {{ partial "back-to-home.html" . }}
+  </div>
+{{ end }}

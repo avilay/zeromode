@@ -1,0 +1,19 @@
+description = "The zeroth law: make them useful."
+footerText = "Built with Hugo and Mana theme"
+heroTitleLine1 = "ZeroMode"
+heroTitleLine2 = "Building Robot Brains"
+
+[avatar]
+  url = "/img/avilay.jpg"
+
+[avatar.home]
+  url = "/img/zeromode_home.png"
+
+[social]
+  github = "https://github.com/avilay"
+  linkedin = "https://www.linkedin.com/in/avilay"
+  email = "avilay@zeromode.dev"
+
+[codeHighlight]
+  darkTheme = "catppuccin-macchiato"
+  lightTheme = "catppuccin-frappe"

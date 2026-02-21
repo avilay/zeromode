@@ -1,0 +1,13 @@
+baseURL = "https://zeromode.dev/"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+theme = "mana"
+title = "ZeroMode"
+
+[taxonomies]
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "JSON"]
