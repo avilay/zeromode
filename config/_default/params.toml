@@ -4,10 +4,10 @@ heroTitleLine1 = "ZeroMode"
 heroTitleLine2 = "Building Robot Brains"
 
 [avatar]
-  url = "/img/avilay.jpg"
+  assetPath = "img/avilay.jpg"
 
 [avatar.home]
-  url = "/img/zeromode_home.png"
+  assetPath = "img/zeromode_home.png"
 
 [social]
   github = "https://github.com/avilay"

@@ -1,7 +1,7 @@
 ---
 title: "Autonomous Navigation Stack"
 date: 2025-01-15
-image: "/img/nav-stack.jpg"
+image: "img/nav-stack.jpg"
 ---
 
 A modular autonomous navigation stack for mobile robots, built on top of ROS 2. The system integrates SLAM, path planning, and obstacle avoidance into a cohesive pipeline that can be deployed on a variety of robot platforms.
