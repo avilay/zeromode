@@ -24,6 +24,7 @@
   (resources.Get "css/search.css")
   (resources.Get "css/animations.css")
   (resources.Get "css/responsive.css")
+  (resources.Get "css/nav-logo.css")
 }}
 {{ $bundledCss := $cssFiles | resources.Concat "css/bundle.css" | minify | fingerprint }}
 <link

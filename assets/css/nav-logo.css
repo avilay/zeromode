@@ -1,0 +1,11 @@
+.header-logo .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  height: 1.5rem;
+  width: auto;
+  flex-shrink: 0;
+}
