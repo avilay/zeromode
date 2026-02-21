@@ -3,7 +3,7 @@
     <div class="header-logo">
       <a href="{{ "/" | relLangURL }}" class="logo-link" aria-label="Home - {{ site.Title }}">
         {{ with resources.Get "img/logo.png" }}
-          {{ with .Resize "32x" }}
+          {{ with .Resize "64x" }}
             <img src="{{ .RelPermalink }}" alt="" class="nav-logo" width="{{ .Width }}" height="{{ .Height }}">
           {{ end }}
         {{ end }}
